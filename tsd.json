@@ -12,10 +12,16 @@
       "commit": "e325b363f5ee9c72ebde49f1e783ae725f64b7e2"
     },
     "redux/redux.d.ts": {
-      "commit": "f8a1ad1646bea46e02911fe46233fba45d681841"
+      "commit": "a186b551aa4ce681a9a7d7c86c8a23c620c54d8c"
     },
     "react-redux/react-redux.d.ts": {
       "commit": "f8a1ad1646bea46e02911fe46233fba45d681841"
+    },
+    "bluebird/bluebird.d.ts": {
+      "commit": "15b109941fd58d69943158f048211f2411173468"
+    },
+    "redux-thunk/redux-thunk.d.ts": {
+      "commit": "a186b551aa4ce681a9a7d7c86c8a23c620c54d8c"
     }
   }
 }
