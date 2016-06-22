@@ -1,14 +1,5 @@
 import React = require('react');
 import ReactDOM = require('react-dom');
-import Counter from "./Counter";
-import store from "./Store";
+import Hello from "./Hello";
 
-function render() {
-    ReactDOM.render(
-        <Counter value={store.getState()} />,
-        document.getElementById('app')
-    )
-}
-
-render();
-store.subscribe(render);
+ReactDOM.render(<Hello content="hello world"/>, document.getElementById('app'));
