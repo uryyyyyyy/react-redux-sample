@@ -1,0 +1,22 @@
+{
+  "name": "flux-react-client",
+  "version": "1.0.0",
+  "license": "MIT",
+  "scripts": {
+    "postinstall": "tsd install",
+    "build": "webpack --progress --colors --watch"
+  },
+  "devDependencies": {
+    "source-map-loader": "^0.1.5",
+    "ts-loader": "^0.8.2",
+    "tsd": "^0.6.5",
+    "typescript": "^1.8.10",
+    "webpack": "^1.13.1"
+  },
+  "dependencies": {
+    "react": "^15.1.0",
+    "react-dom": "^15.1.0",
+    "react-redux": "^4.4.5",
+    "redux": "^3.5.2"
+  }
+}
