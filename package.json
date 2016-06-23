@@ -10,11 +10,9 @@
   },
   "devDependencies": {
     "chai": "^3.5.0",
-    "enzyme": "^2.3.0",
     "jsdom": "^9.2.1",
     "mocha": "^2.5.3",
     "react-addons-test-utils": "^15.1.0",
-    "redux-mock-store": "^1.1.1",
     "sinon": "^1.17.4",
     "source-map-loader": "^0.1.5",
     "ts-loader": "^0.8.2",

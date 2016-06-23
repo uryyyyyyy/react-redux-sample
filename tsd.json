@@ -23,9 +23,6 @@
     "redux-thunk/redux-thunk.d.ts": {
       "commit": "a186b551aa4ce681a9a7d7c86c8a23c620c54d8c"
     },
-    "enzyme/enzyme.d.ts": {
-      "commit": "ded1efdca0713a3df3ec18b225892655e8408e33"
-    },
     "jsdom/jsdom.d.ts": {
       "commit": "ded1efdca0713a3df3ec18b225892655e8408e33"
     },
@@ -49,9 +46,6 @@
     },
     "assertion-error/assertion-error.d.ts": {
       "commit": "ded1efdca0713a3df3ec18b225892655e8408e33"
-    },
-    "redux-mock-store/redux-mock-store.d.ts": {
-      "commit": "a394abe51376ef783bcc1bea173d78b189485530"
     }
   }
 }

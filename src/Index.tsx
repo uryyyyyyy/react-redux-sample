@@ -5,7 +5,7 @@ import store from "./Store";
 
 function render() {
     ReactDOM.render(
-        <Counter value={store.getState()} />,
+        <Counter value={store.getState()} dispatch={store.dispatch} />,
         document.getElementById('app')
     )
 }

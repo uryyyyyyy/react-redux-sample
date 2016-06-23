@@ -1,28 +1,28 @@
-import {assert} from "chai";
 import * as React from "react";
 import Counter from "../Counter";
-import {mount} from "enzyme";
-import store from "../Store";
-import configureStore from 'redux-mock-store';
-import thunk from 'redux-thunk';
-
+import {spy} from "sinon";
+import * as Types from "../ActionTypes";
+import {assert} from "chai";
+import TestUtils = require("react-addons-test-utils");
+import ReactDOM = require('react-dom');
+import {MyAction} from "../Models";
 
 describe('Counter test', () => {
 
-    it('render test', () => {
-        console.log(store.getState());
-        const component = mount(<Counter value={{num: 0}} />);
+    it('changes the text after click', () => {
+        const spyCB:any = spy();
+        const checkbox: any = TestUtils.renderIntoDocument(
+            <Counter value={{num: 0}} dispatch={spyCB} />
+        );
 
-        assert.deepEqual(component.children().at(0).type(), 'p');
-        assert.deepEqual(component.children().at(0).text(), 'Clicked: 0 times');
-    });
-
-    it('action test', () => {
+        const checkboxNode = ReactDOM.findDOMNode(checkbox);
+        const p = checkboxNode.getElementsByTagName("p")[0];
+        const button:any = checkboxNode.getElementsByTagName("button")[1];
         
-        const component = mount(<Counter value={{num: 0}} />, {context: {store: store}});
+        TestUtils.Simulate.click(button);
+        assert.deepEqual(spyCB.calledOnce, true);
 
-        const actions = store.getActions();
-
-        console.log(actions)
+        const decrement: MyAction = { type: Types.DECREMENT, amount: 2};
+        assert.deepEqual(spyCB.calledWith(decrement), true);
     });
 });

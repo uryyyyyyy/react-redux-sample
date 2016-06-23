@@ -1,6 +1,5 @@
 import * as Types from "./ActionTypes";
 import {GlobalState, MyAction} from "./Models";
-import store from "./Store";
 
 const initialState:GlobalState = {num: 0};
 
