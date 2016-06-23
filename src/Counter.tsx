@@ -16,8 +16,9 @@ export default class Counter extends React.Component<Props, {}> {
         return (
             <div>
                 <p>Clicked: {this.props.value.num} times</p>
-                <button onClick={() => this.props.dispatch(middleHook(1000))}>Increment 3</button>
+                <button onClick={() => this.props.dispatch(increment)}>Increment 3</button>
                 <button onClick={() => this.props.dispatch(decrement)}>Decrement 2</button>
+                <button onClick={() => this.props.dispatch(middleHook(1000))}>async bonus 100</button>
             </div>
         )
     }

@@ -12,7 +12,7 @@
       "commit": "e325b363f5ee9c72ebde49f1e783ae725f64b7e2"
     },
     "redux/redux.d.ts": {
-      "commit": "a394abe51376ef783bcc1bea173d78b189485530"
+      "commit": "3ee59b28b6c492d59c42bafd880d2c4d64788cbb"
     },
     "react-redux/react-redux.d.ts": {
       "commit": "f8a1ad1646bea46e02911fe46233fba45d681841"
@@ -48,6 +48,9 @@
       "commit": "ded1efdca0713a3df3ec18b225892655e8408e33"
     },
     "proxyquire/proxyquire.d.ts": {
+      "commit": "3ee59b28b6c492d59c42bafd880d2c4d64788cbb"
+    },
+    "redux-mock-store/redux-mock-store.d.ts": {
       "commit": "3ee59b28b6c492d59c42bafd880d2c4d64788cbb"
     }
   }

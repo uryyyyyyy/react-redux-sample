@@ -4,10 +4,10 @@ import {spy} from "sinon";
 import * as Types from "../ActionTypes";
 import {assert} from "chai";
 import {MyAction} from "../Models";
+import * as ReduxMockStore from "redux-mock-store";
+import thunk from "redux-thunk";
 import TestUtils = require("react-addons-test-utils");
 import ReactDOM = require('react-dom');
-import * as ReduxMockStore  from 'redux-mock-store';
-import thunk from 'redux-thunk';
 const reduxMockStore:any = ReduxMockStore
 
 describe('Counter test', () => {
@@ -21,7 +21,7 @@ describe('Counter test', () => {
         const checkboxNode = ReactDOM.findDOMNode(checkbox);
         const p = checkboxNode.getElementsByTagName("p")[0];
         const button:any = checkboxNode.getElementsByTagName("button")[1];
-        
+
         TestUtils.Simulate.click(button);
         assert.deepEqual(spyCB.calledOnce, true);
 
@@ -36,14 +36,14 @@ describe('Counter test', () => {
         const getState = {};
 
         const store = mockStore(getState);
-        
+
         const checkbox: any = TestUtils.renderIntoDocument(
             <Counter value={{num: 0}} dispatch={store.dispatch} />
         );
-        
+
         const checkboxNode = ReactDOM.findDOMNode(checkbox);
         const p = checkboxNode.getElementsByTagName("p")[0];
-        const button:any = checkboxNode.getElementsByTagName("button")[0];
+        const button:any = checkboxNode.getElementsByTagName("button")[2];
         TestUtils.Simulate.click(button);
 
         const actions = store.getActions();
