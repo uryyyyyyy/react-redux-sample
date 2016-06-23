@@ -10,16 +10,13 @@ describe('Async test', () => {
         const middlewares = [thunk];
         const mockStore = reduxMockStore(middlewares);
 
-        const Middle = proxyquire("../Middle", {
+        const {setTimeoutAction} = proxyquire("../ActionCreators", {
             "./Async": {async: () => new Promise((resolve, reject) => resolve(10))}
         });
 
-        const getState = {};
-        console.log(Middle);
-
-        const store = mockStore(getState);
-
-        store.dispatch(Middle.middleHook(50)).then(() => {
+        const state = {};
+        const store = mockStore(state);
+        store.dispatch(setTimeoutAction(50)).then(() => {
             const actions = store.getActions();
             assert.deepEqual(actions[0], { type: 'fetching' });
             assert.deepEqual(actions[1], { type: 'INCREMENT', amount: 10 });

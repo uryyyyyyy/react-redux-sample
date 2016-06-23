@@ -3,51 +3,41 @@ import Counter from "../Counter";
 import {spy} from "sinon";
 import * as Types from "../ActionTypes";
 import {assert} from "chai";
-import {MyAction} from "../Models";
-import * as ReduxMockStore from "redux-mock-store";
-import thunk from "redux-thunk";
+import {MyAction, DispatchActions} from "../Models";
 import TestUtils = require("react-addons-test-utils");
 import ReactDOM = require('react-dom');
-const reduxMockStore:any = ReduxMockStore
 
 describe('Counter test', () => {
 
     it('normal click test', () => {
         const spyCB:any = spy();
+        const ss:DispatchActions = new DispatchActions(spyCB);
         const checkbox: any = TestUtils.renderIntoDocument(
-            <Counter value={{num: 0}} dispatch={spyCB} />
+            <Counter value={{num: 0}} actions={ss} />
         );
 
         const checkboxNode = ReactDOM.findDOMNode(checkbox);
-        const p = checkboxNode.getElementsByTagName("p")[0];
         const button:any = checkboxNode.getElementsByTagName("button")[1];
-
+        
         TestUtils.Simulate.click(button);
         assert.deepEqual(spyCB.calledOnce, true);
-
+        
         const decrement: MyAction = { type: Types.DECREMENT, amount: 2};
         assert.deepEqual(spyCB.calledWith(decrement), true);
     });
 
     it('click test2', () => {
-        const middlewares = [thunk];
-        const mockStore = reduxMockStore(middlewares);
-
-        const getState = {};
-
-        const store = mockStore(getState);
-
+        const spyCB:any = spy();
+        const ss:any = {async: spyCB};
         const checkbox: any = TestUtils.renderIntoDocument(
-            <Counter value={{num: 0}} dispatch={store.dispatch} />
+            <Counter value={{num: 0}} actions={ss} />
         );
 
         const checkboxNode = ReactDOM.findDOMNode(checkbox);
-        const p = checkboxNode.getElementsByTagName("p")[0];
         const button:any = checkboxNode.getElementsByTagName("button")[2];
-        TestUtils.Simulate.click(button);
 
-        const actions = store.getActions();
-        const expect = { type: 'fetching' };
-        assert.deepEqual(actions[0], expect);
+        TestUtils.Simulate.click(button);
+        assert.deepEqual(spyCB.calledOnce, true);
+        assert.deepEqual(spyCB.calledWith(1000), true);
     });
 });
