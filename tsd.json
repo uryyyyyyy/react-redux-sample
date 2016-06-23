@@ -52,6 +52,12 @@
     },
     "redux-mock-store/redux-mock-store.d.ts": {
       "commit": "3ee59b28b6c492d59c42bafd880d2c4d64788cbb"
+    },
+    "axios/axios.d.ts": {
+      "commit": "42ef709d5206e33935380a73679ccaabeff3a7f0"
+    },
+    "nock/nock.d.ts": {
+      "commit": "42ef709d5206e33935380a73679ccaabeff3a7f0"
     }
   }
 }
