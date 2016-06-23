@@ -1,6 +1,11 @@
-import {setTimeoutAction, decrementAction, incrementAction} from "./ActionCreators";
+import {decrementAction, incrementAction, fetchAmountAction} from "./ActionCreators";
+
 export interface GlobalState {
     num: number;
+}
+
+export interface JsonObject {
+    amount: number;
 }
 
 export interface MyAction {
@@ -22,8 +27,8 @@ export class DispatchActions {
         this.dispatch(decrementAction(amount))
     }
 
-    public async(time: number) {
-        this.dispatch(setTimeoutAction(time))
+    public fetchAmount() {
+        this.dispatch(fetchAmountAction())
     }
 }
 

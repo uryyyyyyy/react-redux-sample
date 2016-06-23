@@ -1,20 +1,11 @@
-import {async} from "./Async";
-import {MyAction, ActionTypes} from "./Models";
+import {MyAction, ActionTypes, JsonObject} from "./Models";
 import * as axios from "axios";
-import AxiosXHR = Axios.AxiosXHR;
 
-export function setTimeoutAction(time: number) {
-    return (dispatch: (action: any) => any) => {
-        dispatch({ type: "fetching"});
-        return async(time).then(v => dispatch({ type: ActionTypes.INCREMENT, amount: v}/*fetch done*/));
-    };
-}
-
-export function fetchTodos() {
+export function fetchAmountAction() {
     return (dispatch: (action: any) => any) => {
         dispatch({ type: "FETCH_TODOS_REQUEST"});
-        return axios.get('/todos')
-            .then((json:AxiosXHR<any[]>) => dispatch({ type: "FETCH_TODOS_SUCCESS", json: json.data}))
+        return axios.get('/json/sample.json')
+            .then((json:Axios.AxiosXHR<JsonObject>) => dispatch({ type: ActionTypes.INCREMENT, amount: json.data.amount}))
             .catch(ex => dispatch({ type: "FETCH_TODOS_SUCCESS", ex: ex}))
     }
 }

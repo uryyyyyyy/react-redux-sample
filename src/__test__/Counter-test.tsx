@@ -3,8 +3,8 @@ import Counter from "../Counter";
 import {spy} from "sinon";
 import {assert} from "chai";
 import {MyAction, DispatchActions, ActionTypes} from "../Models";
-import TestUtils = require("react-addons-test-utils");
-import ReactDOM = require('react-dom');
+import * as TestUtils from "react-addons-test-utils";
+import * as ReactDOM from 'react-dom';
 
 describe('Counter test', () => {
 
@@ -27,7 +27,7 @@ describe('Counter test', () => {
 
     it('click test2', () => {
         const spyCB:any = spy();
-        const ss:any = {async: spyCB};
+        const ss:any = {fetchAmount: spyCB};
         const checkbox: any = TestUtils.renderIntoDocument(
             <Counter value={{num: 0}} actions={ss} />
         );
@@ -37,6 +37,6 @@ describe('Counter test', () => {
 
         TestUtils.Simulate.click(button);
         assert.deepEqual(spyCB.calledOnce, true);
-        assert.deepEqual(spyCB.calledWith(1000), true);
+        assert.deepEqual(spyCB.calledWith(), true);
     });
 });
