@@ -26,3 +26,8 @@ export class DispatchActions {
         this.dispatch(setTimeoutAction(time))
     }
 }
+
+export class ActionTypes{
+    static INCREMENT = 'INCREMENT';
+    static DECREMENT = 'DECREMENT';
+}

@@ -1,9 +1,8 @@
 import * as React from "react";
 import Counter from "../Counter";
 import {spy} from "sinon";
-import * as Types from "../ActionTypes";
 import {assert} from "chai";
-import {MyAction, DispatchActions} from "../Models";
+import {MyAction, DispatchActions, ActionTypes} from "../Models";
 import TestUtils = require("react-addons-test-utils");
 import ReactDOM = require('react-dom');
 
@@ -22,7 +21,7 @@ describe('Counter test', () => {
         TestUtils.Simulate.click(button);
         assert.deepEqual(spyCB.calledOnce, true);
         
-        const decrement: MyAction = { type: Types.DECREMENT, amount: 2};
+        const decrement: MyAction = { type: ActionTypes.DECREMENT, amount: 2};
         assert.deepEqual(spyCB.calledWith(decrement), true);
     });
 
