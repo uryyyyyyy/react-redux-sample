@@ -1,7 +1,7 @@
 import * as React from "react";
 import * as Types from "./ActionTypes";
 import {GlobalState, MyAction} from "./Models";
-import {async} from "./Async";
+import {middleHook} from "./Middle";
 
 interface Props {
     value: GlobalState;
@@ -16,7 +16,7 @@ export default class Counter extends React.Component<Props, {}> {
         return (
             <div>
                 <p>Clicked: {this.props.value.num} times</p>
-                <button onClick={() => this.props.dispatch(async(1000))}>Increment 3</button>
+                <button onClick={() => this.props.dispatch(middleHook(1000))}>Increment 3</button>
                 <button onClick={() => this.props.dispatch(decrement)}>Decrement 2</button>
             </div>
         )

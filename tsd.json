@@ -46,6 +46,9 @@
     },
     "assertion-error/assertion-error.d.ts": {
       "commit": "ded1efdca0713a3df3ec18b225892655e8408e33"
+    },
+    "proxyquire/proxyquire.d.ts": {
+      "commit": "3ee59b28b6c492d59c42bafd880d2c4d64788cbb"
     }
   }
 }

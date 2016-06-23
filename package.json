@@ -12,6 +12,7 @@
     "chai": "^3.5.0",
     "jsdom": "^9.2.1",
     "mocha": "^2.5.3",
+    "proxyquire": "^1.7.9",
     "react-addons-test-utils": "^15.1.0",
     "sinon": "^1.17.4",
     "source-map-loader": "^0.1.5",
