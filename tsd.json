@@ -6,13 +6,13 @@
   "bundle": "typings/tsd.d.ts",
   "installed": {
     "react/react.d.ts": {
-      "commit": "f8a1ad1646bea46e02911fe46233fba45d681841"
+      "commit": "ded1efdca0713a3df3ec18b225892655e8408e33"
     },
     "react/react-dom.d.ts": {
       "commit": "e325b363f5ee9c72ebde49f1e783ae725f64b7e2"
     },
     "redux/redux.d.ts": {
-      "commit": "a186b551aa4ce681a9a7d7c86c8a23c620c54d8c"
+      "commit": "a394abe51376ef783bcc1bea173d78b189485530"
     },
     "react-redux/react-redux.d.ts": {
       "commit": "f8a1ad1646bea46e02911fe46233fba45d681841"
@@ -22,6 +22,36 @@
     },
     "redux-thunk/redux-thunk.d.ts": {
       "commit": "a186b551aa4ce681a9a7d7c86c8a23c620c54d8c"
+    },
+    "enzyme/enzyme.d.ts": {
+      "commit": "ded1efdca0713a3df3ec18b225892655e8408e33"
+    },
+    "jsdom/jsdom.d.ts": {
+      "commit": "ded1efdca0713a3df3ec18b225892655e8408e33"
+    },
+    "mocha/mocha.d.ts": {
+      "commit": "ded1efdca0713a3df3ec18b225892655e8408e33"
+    },
+    "node/node.d.ts": {
+      "commit": "ded1efdca0713a3df3ec18b225892655e8408e33"
+    },
+    "sinon/sinon.d.ts": {
+      "commit": "ded1efdca0713a3df3ec18b225892655e8408e33"
+    },
+    "react/react-addons-test-utils.d.ts": {
+      "commit": "ded1efdca0713a3df3ec18b225892655e8408e33"
+    },
+    "jquery/jquery.d.ts": {
+      "commit": "ded1efdca0713a3df3ec18b225892655e8408e33"
+    },
+    "chai/chai.d.ts": {
+      "commit": "ded1efdca0713a3df3ec18b225892655e8408e33"
+    },
+    "assertion-error/assertion-error.d.ts": {
+      "commit": "ded1efdca0713a3df3ec18b225892655e8408e33"
+    },
+    "redux-mock-store/redux-mock-store.d.ts": {
+      "commit": "a394abe51376ef783bcc1bea173d78b189485530"
     }
   }
 }
