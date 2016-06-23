@@ -1,18 +1,12 @@
 import * as React from "react";
 import * as Types from "./ActionTypes";
 import {GlobalState, MyAction} from "./Models";
-import * as Promise from "bluebird";
+import {async} from "./Async";
 
 interface Props {
     value: GlobalState;
     dispatch: (action:any) => any;
 }
-
-function async(time: number) {
-    const promise:Promise<{}> = new Promise(function(resolve, reject) {setTimeout(() => resolve(100), time)});
-    return (dispatch: any) => promise.then(v => dispatch({ type: Types.INCREMENT, amount: v}));
-}
-
 
 export default class Counter extends React.Component<Props, {}> {
 
