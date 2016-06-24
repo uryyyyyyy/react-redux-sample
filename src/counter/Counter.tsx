@@ -1,8 +1,8 @@
 import * as React from "react";
-import {GlobalState, DispatchActions} from "./Models";
+import {CounterState, DispatchActions} from "./Models";
 
 interface Props {
-    value: GlobalState;
+    value: CounterState;
     actions: DispatchActions;
 }
 

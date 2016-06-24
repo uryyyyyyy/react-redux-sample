@@ -1,15 +1,21 @@
-import * as React from 'react';
-import * as ReactDOM from 'react-dom';
-import Counter from "./Counter";
+import * as React from "react";
+import * as ReactDOM from "react-dom";
+import {Router, Route, browserHistory} from "react-router";
+import Root from "./Root";
+import NotFound from "./NotFound";
+import CounterRoot from "./counter/CounterRoot";
+import {Provider} from "react-redux";
 import store from "./Store";
-import {DispatchActions} from "./Models";
+import {Paths} from "./Models";
 
-function render() {
-    ReactDOM.render(
-        <Counter value={store.getState()} actions={new DispatchActions(store.dispatch)} />,
-        document.getElementById('app')
-    )
-}
-
-render();
-store.subscribe(render);
+ReactDOM.render(
+    <Provider store={store}>
+        <Router history={browserHistory}>
+            <Route path='/' component={Root} >
+                <Route path={Paths.COUNTER} component={CounterRoot} />
+                <Route path="*" component={NotFound} />
+            </Route>
+        </Router>
+    </Provider>,
+    document.getElementById('app')
+);

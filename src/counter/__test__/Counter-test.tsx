@@ -2,7 +2,7 @@ import * as React from "react";
 import Counter from "../Counter";
 import {spy} from "sinon";
 import {assert} from "chai";
-import {GlobalState} from "../Models";
+import {CounterState} from "../Models";
 import * as TestUtils from "react-addons-test-utils";
 import * as ReactDOM from "react-dom";
 
@@ -10,7 +10,7 @@ describe('Counter test', () => {
 
     it('rendering test', () => {
         const actions:any = {};
-        const state: GlobalState = {num: 1};
+        const state: CounterState = {num: 1};
         const counterComponent: any = TestUtils.renderIntoDocument(
             <Counter value={state} actions={actions} />
         );

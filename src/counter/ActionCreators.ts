@@ -16,7 +16,7 @@ export function fetchAmountAction() {
         };
 
         dispatch({ type: ActionTypes.FETCH_REQUEST});
-        return axios.get('/json/sample.json')
+        return axios.get('/api/sample.json')
             .then(successCB)
             .catch(failCB)
     }

@@ -12,7 +12,7 @@ describe('Async test', () => {
         //use mock server.
         
         nock('http://localhost/')
-            .get('/json/sample.json')
+            .get('/api/sample.json')
             .reply(200, { amount: 100 });
 
         const middlewares = [thunk];
