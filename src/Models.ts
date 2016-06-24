@@ -10,7 +10,7 @@ export interface JsonObject {
 
 export interface MyAction {
     type: string;
-    amount: number;
+    amount?: number;
 }
 
 export class DispatchActions {
