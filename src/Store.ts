@@ -1,10 +1,12 @@
 import {counter} from "./counter/Reducer";
+import {todoReduce} from "./todo/Reducer";
 import {createStore, applyMiddleware, combineReducers} from "redux";
 import thunk from "redux-thunk";
 
 const store = createStore(
     combineReducers({
-        counter
+        counter,
+        todoReduce
     }),
     applyMiddleware(thunk)
 );

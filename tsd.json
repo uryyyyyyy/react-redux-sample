@@ -61,6 +61,9 @@
     },
     "react-router/history.d.ts": {
       "commit": "ffd313adf9e5b86d9f04270e4e39b64720317352"
+    },
+    "immutable/immutable.d.ts": {
+      "commit": "ffd313adf9e5b86d9f04270e4e39b64720317352"
     }
   }
 }
