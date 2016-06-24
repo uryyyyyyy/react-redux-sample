@@ -35,4 +35,6 @@ export class DispatchActions {
 export class ActionTypes{
     static INCREMENT = 'INCREMENT';
     static DECREMENT = 'DECREMENT';
+    static FETCH_REQUEST = 'FETCH_REQUEST';
+    static FETCH_FAIL = 'FETCH_FAIL';
 }

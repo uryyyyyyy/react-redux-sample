@@ -4,36 +4,38 @@ import {spy} from "sinon";
 import {assert} from "chai";
 import {MyAction, DispatchActions, ActionTypes} from "../Models";
 import * as TestUtils from "react-addons-test-utils";
-import * as ReactDOM from 'react-dom';
+import * as ReactDOM from "react-dom";
 
 describe('Counter test', () => {
 
     it('normal click test', () => {
         const spyCB:any = spy();
-        const ss:DispatchActions = new DispatchActions(spyCB);
-        const checkbox: any = TestUtils.renderIntoDocument(
-            <Counter value={{num: 0}} actions={ss} />
+        const actions:DispatchActions = new DispatchActions(spyCB);
+        const counterComponent: any = TestUtils.renderIntoDocument(
+            <Counter value={{num: 0}} actions={actions} />
         );
 
-        const checkboxNode = ReactDOM.findDOMNode(checkbox);
-        const button:any = checkboxNode.getElementsByTagName("button")[1];
-        
+        const counterDOM = ReactDOM.findDOMNode(counterComponent);
+        const buttons: NodeListOf<HTMLButtonElement> = counterDOM.getElementsByTagName("button");
+        const button: HTMLButtonElement = buttons[1];
+
         TestUtils.Simulate.click(button);
         assert.deepEqual(spyCB.calledOnce, true);
-        
+
         const decrement: MyAction = { type: ActionTypes.DECREMENT, amount: 2};
         assert.deepEqual(spyCB.calledWith(decrement), true);
     });
 
     it('click test2', () => {
         const spyCB:any = spy();
-        const ss:any = {fetchAmount: spyCB};
-        const checkbox: any = TestUtils.renderIntoDocument(
-            <Counter value={{num: 0}} actions={ss} />
+        const actions:any = {fetchAmount: spyCB};
+        const counterComponent: any = TestUtils.renderIntoDocument(
+            <Counter value={{num: 0}} actions={actions} />
         );
 
-        const checkboxNode = ReactDOM.findDOMNode(checkbox);
-        const button:any = checkboxNode.getElementsByTagName("button")[2];
+        const counterDOM = ReactDOM.findDOMNode(counterComponent);
+        const buttons: NodeListOf<HTMLButtonElement> = counterDOM.getElementsByTagName("button");
+        const button: HTMLButtonElement = buttons[2];
 
         TestUtils.Simulate.click(button);
         assert.deepEqual(spyCB.calledOnce, true);

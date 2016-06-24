@@ -2,11 +2,23 @@ import {MyAction, ActionTypes, JsonObject} from "./Models";
 import * as axios from "axios";
 
 export function fetchAmountAction() {
+
     return (dispatch: (action: MyAction) => any) => {
-        dispatch({ type: "FETCH_TODOS_REQUEST"});
+
+        const failCB = (ex:Error) => {
+            console.error(ex);
+            dispatch({ type: ActionTypes.FETCH_FAIL})
+        };
+
+        const successCB = (json:Axios.AxiosXHR<JsonObject>) => {
+            const action = { type: ActionTypes.INCREMENT, amount: json.data.amount}
+            dispatch(action)
+        };
+
+        dispatch({ type: ActionTypes.FETCH_REQUEST});
         return axios.get('/json/sample.json')
-            .then((json:Axios.AxiosXHR<JsonObject>) => dispatch({ type: ActionTypes.INCREMENT, amount: json.data.amount}))
-            .catch(ex => dispatch({ type: "FETCH_TODOS_FAIL"}))
+            .then(successCB)
+            .catch(failCB)
     }
 }
 

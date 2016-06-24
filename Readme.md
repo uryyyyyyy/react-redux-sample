@@ -3,6 +3,10 @@
 
 minimal sample implement
 
+## requirement
+
+- NodeJS 5.X~
+
 ## setup
 
 `npm install`
