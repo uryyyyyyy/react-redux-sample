@@ -17,8 +17,7 @@ export function todoReduce(state: TodoState = initialState, action: MyAction): T
     }
 
     function fetchAll(state:TodoState, action:MyAction) {
-        const todos = action.todos.map(v => new Todo(v.id, v.text, v.isComplete));
-        return {todos: List.of(...todos)}
+        return {todos: action.todos}
     }
 
     //console.log(action);

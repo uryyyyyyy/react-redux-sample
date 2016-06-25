@@ -26,7 +26,7 @@ export interface MyAction {
     type: string;
     id?: number;
     text?: string;
-    todos?: TodoInterface[];
+    todos?: List<Todo>;
 }
 
 export class DispatchActions {
