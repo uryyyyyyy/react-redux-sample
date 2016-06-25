@@ -1,7 +1,13 @@
-import {decrementAction, incrementAction} from "./ActionCreators";
+import {decrementAction, incrementAction, fetchAllAction} from "./ActionCreators";
 import {List} from "immutable";
 
-export class Todo {
+export interface TodoInterface {
+    id: number;
+    text: string;
+    isComplete: boolean;
+}
+
+export class Todo implements TodoInterface{
     public id: number;
     public text: string;
     public isComplete: boolean;
@@ -20,6 +26,7 @@ export interface MyAction {
     type: string;
     id?: number;
     text?: string;
+    todos?: TodoInterface[];
 }
 
 export class DispatchActions {
@@ -35,9 +42,16 @@ export class DispatchActions {
     public deleteTodo(id: number) {
         this.dispatch(decrementAction(id))
     }
+
+    public fetchAll() {
+        this.dispatch(fetchAllAction())
+    }
 }
 
 export class ActionTypes{
-    static INCREMENT = 'TODO_INCREMENT';
-    static DECREMENT = 'TODO_DECREMENT';
+    static ADD_TODO = 'TODO_ADD';
+    static DELETE_TODO = 'TODO_DELETE';
+    static FETCH_ALL = 'TODO_FETCH_ALL';
+    static FETCH_REQUEST = 'TODO_FETCH_REQUEST';
+    static FETCH_FAIL = 'TODO_FETCH_FAIL';
 }

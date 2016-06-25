@@ -8,7 +8,6 @@ export function todoReduce(state: TodoState = initialState, action: MyAction): T
     function addTodo(state: TodoState, action: MyAction):TodoState {
         let newNumber = 1;
         if(!state.todos.isEmpty()) newNumber = state.todos.map(v => v.id).max() + 1;
-        console.log("new number is " + newNumber);
         const newTodo = new Todo(newNumber, action.text, false);
         return {todos: state.todos.push(newTodo)};
     }
@@ -17,12 +16,19 @@ export function todoReduce(state: TodoState = initialState, action: MyAction): T
         return {todos: state.todos.filter(item => item.id !== action.id)}
     }
 
-    console.log(action);
+    function fetchAll(state:TodoState, action:MyAction) {
+        const todos = action.todos.map(v => new Todo(v.id, v.text, v.isComplete));
+        return {todos: List.of(...todos)}
+    }
+
+    //console.log(action);
     switch (action.type) {
-        case ActionTypes.INCREMENT:
+        case ActionTypes.ADD_TODO:
             return addTodo(state, action);
-        case ActionTypes.DECREMENT:
+        case ActionTypes.DELETE_TODO:
             return deleteTodo(state, action);
+        case ActionTypes.FETCH_ALL:
+            return fetchAll(state, action);
         default:
             return state
     }

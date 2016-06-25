@@ -1,7 +1,7 @@
 import * as React from "react";
-import {DispatchActions, TodoState, Todo} from "./Models";
-import Footer from "./Footer"
-import TodoItem from "./TodoItem"
+import {DispatchActions, Todo} from "./Models";
+import Footer from "./Footer";
+import TodoItem from "./TodoItem";
 import {List} from "immutable";
 
 interface Props {
@@ -10,6 +10,12 @@ interface Props {
 }
 
 export default class TodoList extends React.Component<Props, {}> {
+    
+    componentDidMount() {
+        //if todos are already taken, don't action anymore.
+        if(!this.props.todos.isEmpty()) return;
+        this.props.actions.fetchAll()
+    }
 
     render() {
         const todoItems = this.props.todos.map((item:Todo) => (

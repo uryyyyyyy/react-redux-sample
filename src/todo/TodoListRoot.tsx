@@ -14,7 +14,10 @@ export class TodoListRoot extends React.Component<Props, {}> {
     render() {
         const actions = new DispatchActions(this.props.dispatch);
         return (
-            <TodoList todos={this.props.state.todos} actions={actions}/>
+            <div>
+                <h2>TODO List</h2>
+                <TodoList todos={this.props.state.todos} actions={actions}/>
+            </div>
         )
     }
 }

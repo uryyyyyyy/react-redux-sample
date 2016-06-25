@@ -14,7 +14,10 @@ export class CounterRoot extends React.Component<Props, {}> {
     render() {
         const actions = new DispatchActions(this.props.dispatch);
         return (
-            <Counter value={this.props.state} actions={actions}/>
+            <div>
+                <h2>Counter</h2>
+                <Counter value={this.props.state} actions={actions}/>
+            </div>
         )
     }
 }
