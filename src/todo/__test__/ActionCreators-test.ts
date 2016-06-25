@@ -2,7 +2,7 @@ import {assert} from "chai";
 import * as ReduxMockStore from "redux-mock-store";
 import thunk from "redux-thunk";
 import {fetchAllAction} from "../ActionCreators";
-import {ActionTypes} from "../Models";
+import {ActionTypes, Todo} from "../Models";
 import * as nock from "nock";
 
 describe('Async test', () => {
@@ -23,7 +23,8 @@ describe('Async test', () => {
         store.dispatch(fetchAllAction()).then(() => {
             const actions = store.getActions();
             assert.deepEqual(actions[0], { type: ActionTypes.FETCH_REQUEST });
-            assert.deepEqual(actions[1], { type: ActionTypes.FETCH_ALL, todos: [{id: 1, text:"task", isComplete: true}] });
+            assert.deepEqual(actions[1].todos.size, 1);
+            assert.deepEqual(actions[1].todos.get(0), new Todo(1, "task", true));
             done();
         }).catch(done);
     });

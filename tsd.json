@@ -6,7 +6,7 @@
   "bundle": "typings/tsd.d.ts",
   "installed": {
     "react/react.d.ts": {
-      "commit": "ffd313adf9e5b86d9f04270e4e39b64720317352"
+      "commit": "73110d92bdab2367e326f297bef3574285cba329"
     },
     "react/react-dom.d.ts": {
       "commit": "e325b363f5ee9c72ebde49f1e783ae725f64b7e2"
@@ -64,6 +64,9 @@
     },
     "immutable/immutable.d.ts": {
       "commit": "ffd313adf9e5b86d9f04270e4e39b64720317352"
+    },
+    "material-ui/material-ui.d.ts": {
+      "commit": "73110d92bdab2367e326f297bef3574285cba329"
     }
   }
 }

@@ -14,7 +14,7 @@ describe('reducer test', () => {
 
     it('FETCH_ALL', () => {
         const state: TodoState = {todos: List.of<Todo>()};
-        const action: MyAction = { type: ActionTypes.FETCH_ALL, todos: [{id: 1, text: "task", isComplete: false}]};
+        const action: MyAction = { type: ActionTypes.FETCH_ALL, todos: List.of<Todo>(new Todo(1, "task", false))};
         const result = todoReduce(state, action);
         assert.deepEqual(result.todos.size, 1);
         assert.deepEqual(result.todos.get(0), new Todo(1, "task", false));

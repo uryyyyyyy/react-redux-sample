@@ -1,5 +1,7 @@
 import * as React from "react";
 import {Todo, DispatchActions} from "./Models";
+import {RaisedButton} from "material-ui";
+import DoneIcon from 'material-ui/svg-icons/action/done';
 
 export interface Props {
     item: Todo;
@@ -21,10 +23,9 @@ export default class TodoItem extends React.Component<Props, {}> {
         return (
             <li>
                 <span> {this.props.item.text} </span>
-                <button
-                    className="myButton"
+                <RaisedButton
                     onClick={this.removeItem}
-                >delete</button>
+                    icon={<DoneIcon />} />
             </li>
         );
     }
