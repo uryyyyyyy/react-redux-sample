@@ -10,7 +10,8 @@ this repo has some branch
 - async -> http://qiita.com/uryyyyyyy/items/41334a810f1501ece87d
 - test -> http://qiita.com/uryyyyyyy/items/7d4b0ede3f2b973d6951
 - react-router -> http://qiita.com/uryyyyyyy/items/30733e9cd140e60c52bd
-- immutable -> added todo sample(with immutableJS)
+- immutable -> http://qiita.com/uryyyyyyy/items/6143feba20554fe55a82
+- material-ui -> todo sample(with material-ui)
 
 
 ## requirement
