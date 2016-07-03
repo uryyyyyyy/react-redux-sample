@@ -4,14 +4,12 @@ import * as axios from "axios";
 export function fetchAmountAction() {
     return (dispatch: (action: MyAction) => any) => {
 
-        function failCB(ex:Error): void {
-            // side-effect should be called in this function.
-            console.error(ex);
-            dispatch({ type: ActionTypes.FETCH_FAIL})
+        function failCB(ex:Error):void {
+            dispatch({ type: ActionTypes.FETCH_FAIL, error: ex})
         }
 
-        function successCB(json:Axios.AxiosXHR<JsonObject>): void {
-            const action = { type: ActionTypes.INCREMENT, amount: json.data.amount};
+        function successCB(json:Axios.AxiosXHR<JsonObject>):void {
+            const action = { type: ActionTypes.FETCH_SUCCESS, amount: json.data.amount};
             dispatch(action)
         }
 

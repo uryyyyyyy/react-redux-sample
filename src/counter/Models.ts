@@ -2,6 +2,7 @@ import {decrementAction, incrementAction, fetchAmountAction} from "./ActionCreat
 
 export interface CounterState {
     num: number;
+    loadingCount: number;
 }
 
 export interface JsonObject {
@@ -11,6 +12,7 @@ export interface JsonObject {
 export interface MyAction {
     type: string;
     amount?: number;
+    error?: Error;
 }
 
 export class DispatchActions {
@@ -33,8 +35,9 @@ export class DispatchActions {
 }
 
 export class ActionTypes{
-    static INCREMENT = 'COUNTER_INCREMENT';
-    static DECREMENT = 'COUNTER_DECREMENT';
-    static FETCH_REQUEST = 'COUNTER_FETCH_REQUEST';
-    static FETCH_FAIL = 'COUNTER_FETCH_FAIL';
+    static INCREMENT = 'INCREMENT';
+    static DECREMENT = 'DECREMENT';
+    static FETCH_REQUEST = 'FETCH_REQUEST';
+    static FETCH_SUCCESS = 'FETCH_SUCCESS';
+    static FETCH_FAIL = 'FETCH_FAIL';
 }
