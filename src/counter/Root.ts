@@ -4,6 +4,6 @@ import {Dispatch} from "redux";
 import Counter from "./Counter";
 
 export default connect(
-    (state: any) => {return {state: state.counter}},
+    (store: any) => {return {state: store.counter}},
     (dispatch: Dispatch) => {return {actions: new DispatchActions(dispatch)}}
 )(Counter);
