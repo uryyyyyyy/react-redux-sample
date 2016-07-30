@@ -5,5 +5,5 @@ import Counter from "./Counter";
 
 export default connect(
     (store: any) => {return {state: store.counter}},
-    (dispatch: Dispatch) => {return {actions: new DispatchActions(dispatch)}}
+    (dispatch: Dispatch<any>) => {return {actions: new DispatchActions(dispatch)}}
 )(Counter);

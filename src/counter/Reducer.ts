@@ -1,5 +1,5 @@
 import {CounterState, MyAction, ActionTypes} from "./Models";
-const objectAssign = require('object-assign');
+import objectAssign = require('object-assign');
 
 const initialState:CounterState = {num: 0, loadingCount: 0};
 

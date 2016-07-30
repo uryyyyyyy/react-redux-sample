@@ -1,10 +1,11 @@
 {
-  "name": "flux-react-client",
+  "name": "react-typescript-redux",
   "version": "1.0.0",
   "license": "MIT",
   "scripts": {
     "postinstall": "tsd install",
-    "build": "webpack --progress --colors --watch",
+    "build": "webpack --progress --colors --watch --config ./webpack.config.dev.js",
+    "build:prod": "webpack --config ./webpack.config.prod.js",
     "test:ts": "mocha --require ts-node/register \"./**/__test__/**/*.ts\"",
     "test:tsx": "mocha --require ts-node/register ./test-setup.es6 \"./**/__test__/**/*.tsx\"",
     "server": "node dev-server.es6"
@@ -19,16 +20,14 @@
     "redux-mock-store": "^1.1.1",
     "sinon": "^1.17.4",
     "sleep": "^3.0.1",
-    "source-map-loader": "^0.1.5",
     "ts-loader": "^0.8.2",
     "ts-node": "^0.9.1",
-    "tsd": "^0.6.5",
     "typescript": "^1.8.10",
+    "typings": "^1.3.2",
     "webpack": "^1.13.1"
   },
   "dependencies": {
     "axios": "^0.12.0",
-    "bluebird": "^3.4.1",
     "object-assign": "^4.1.0",
     "react": "^15.1.0",
     "react-dom": "^15.1.0",

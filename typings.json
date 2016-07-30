@@ -1,0 +1,22 @@
+{
+  "globalDependencies": {
+    "axios": "registry:dt/axios#0.9.1+20160629101425",
+    "chai": "registry:dt/chai#3.4.0+20160601211834",
+    "jquery": "registry:dt/jquery#1.10.0+20160704162008",
+    "jsdom": "registry:dt/jsdom#2.0.0+20160316155526",
+    "mocha": "registry:dt/mocha#2.2.5+20160720003353",
+    "nock": "registry:dt/nock#0.54.0+20160613160405",
+    "node": "registry:dt/node#6.0.0+20160728152422",
+    "object-assign": "registry:dt/object-assign#4.0.1+20160316155526",
+    "react": "registry:dt/react#0.14.0+20160720060442",
+    "react-addons-test-utils": "registry:dt/react-addons-test-utils#0.14.0+20160427035638",
+    "react-dom": "registry:dt/react-dom#0.14.0+20160412154040",
+    "react-redux": "registry:dt/react-redux#4.4.0+20160724070751",
+    "react-router": "registry:dt/react-router#2.0.0+20160621215300",
+    "react-router/history": "registry:dt/react-router/history#2.0.0+20160608102730",
+    "redux": "registry:dt/redux#3.5.2+20160703092728",
+    "redux-mock-store": "registry:dt/redux-mock-store#0.0.6+20160514173414",
+    "redux-thunk": "registry:dt/redux-thunk#2.1.0+20160703120921",
+    "sinon": "registry:dt/sinon#1.16.0+20160517064723"
+  }
+}
