@@ -1,5 +1,5 @@
 {
-  "name": "flux-react-client",
+  "name": "react-typescript-redux",
   "version": "1.0.0",
   "license": "MIT",
   "scripts": {
@@ -8,7 +8,6 @@
     "build:prod": "webpack --config ./webpack.config.prod.js"
   },
   "devDependencies": {
-    "source-map-loader": "^0.1.5",
     "ts-loader": "^0.8.2",
     "typescript": "^1.8.10",
     "typings": "^1.3.2",
