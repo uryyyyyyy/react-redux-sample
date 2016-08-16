@@ -1,6 +1,6 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
-import {getRequest} from "./utils/HttpClient";
+import * as axios from "axios";
 
 function login(){
     location.href = "/";
@@ -18,4 +18,6 @@ function successCB(val: any):void {
     login()
 }
 
-getRequest<any>("authCheck", successCB, failCB);
+axios.get("authCheck")
+    .then(successCB)
+    .catch(failCB);

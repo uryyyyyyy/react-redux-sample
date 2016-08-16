@@ -4,7 +4,7 @@ var commonsPlugin = new webpack.optimize.CommonsChunkPlugin('common.js');
 
 module.exports = {
   entry: {
-    login: './src/login.tsx',
+    login: './src/Login.tsx',
     main: "./src/Index.tsx"
   },
   output: {
