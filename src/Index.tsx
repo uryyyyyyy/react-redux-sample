@@ -7,10 +7,9 @@ import counterRoot from "./counter/Root";
 import {Provider} from "react-redux";
 import store from "./Store";
 import {Paths} from "./Models";
-import {IMessageJson} from "./counter/Models";
 import {getRequest} from "./utils/HttpClient";
 
-function failCB(msg: IMessageJson):void {}
+function failCB():void {}
 
 function successCB(val: any):void {
     ReactDOM.render(

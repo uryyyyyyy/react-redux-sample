@@ -1,11 +1,11 @@
-import {MyAction, ActionTypes, IAmount, IMessageJson} from "./Models";
+import {MyAction, ActionTypes, IAmount} from "./Models";
 import {getRequest} from "../utils/HttpClient";
 
 export function fetchAmountAction(forceFail: boolean) {
     return (dispatch: (action: MyAction) => any) => {
 
-        function failCB(msg: IMessageJson):void {
-            dispatch({ type: ActionTypes.FETCH_FAIL, msg: msg})
+        function failCB():void {
+            dispatch({ type: ActionTypes.FETCH_FAIL})
         }
 
         function successCB(amount: IAmount):void {

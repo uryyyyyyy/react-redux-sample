@@ -9,15 +9,10 @@ export interface IAmount {
     amount: number;
 }
 
-export interface IMessageJson {
-    message: string;
-}
-
 export interface MyAction {
     type: string;
     amount?: number;
     amountJson?: IAmount;
-    msg?: IMessageJson;
 }
 
 export class DispatchActions {

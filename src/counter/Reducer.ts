@@ -25,7 +25,6 @@ export function counter(state: CounterState = initialState, action: MyAction): C
             return objectAssign({}, state, {num: newNum, loadingCount: newCount});
         }
         case ActionTypes.FETCH_FAIL:{
-            console.error(action.msg);
             const newCount = state.loadingCount - 1;
             return objectAssign({}, state, {loadingCount: newCount});
         }

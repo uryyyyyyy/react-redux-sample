@@ -6,7 +6,7 @@
     "postinstall": "typings install",
     "build": "webpack --progress --colors --watch --config ./webpack.config.dev.js",
     "build:prod": "webpack --config ./webpack.config.prod.js",
-    "test:ts": "mocha --require ts-node/register \"./**/__test__/**/*.ts\"",
+    "test:ts": "mocha --require ts-node/register ./test-setup.es6 \"./**/__test__/**/*.ts\"",
     "test:tsx": "mocha --require ts-node/register ./test-setup.es6 \"./**/__test__/**/*.tsx\"",
     "server": "node dev-server.es6"
   },

@@ -14,6 +14,7 @@ function failCB():void {
 }
 
 function successCB(val: any):void {
+    alert("login済みです。ホームへ移動します。");
     login()
 }
 

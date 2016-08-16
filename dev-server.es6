@@ -12,8 +12,7 @@ app.get('/api/count', (req, res) => {
 
 app.get('/api/countFail', (req, res) => {
   res.contentType('application/json');
-  const obj = {"message": "error"};
-  res.status(401).json(obj);
+  res.status(401).json(null);
 });
 
 app.get('/authCheck', (req, res) => {
