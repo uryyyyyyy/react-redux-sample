@@ -1,15 +1,31 @@
 const path = require('path');
 const express = require('express');
 const app = express();
-const sleep = require('sleep');
 
-app.use('/dist', express.static('dist'));
+app.use('/public', express.static('public'));
 
 app.get('/api/count', (req, res) => {
   res.contentType('application/json');
   const obj = {"amount": 100};
-  sleep.sleep(1);
   res.json(obj);
+});
+
+app.get('/api/countFail', (req, res) => {
+  res.contentType('application/json');
+  const obj = {"message": "error"};
+  res.status(401).json(obj);
+});
+
+app.get('/authCheck', (req, res) => {
+  res.contentType('application/json');
+  const obj = {"amount": 100};
+  res
+      //.status(401) //fif you want to test authorize fail, use this.
+      .json(obj);
+});
+
+app.get('/login', (req, res) => {
+  res.sendFile(path.join(__dirname, 'login.html'));
 });
 
 app.get('*', (req, res) => {

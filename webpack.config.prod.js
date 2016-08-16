@@ -1,9 +1,15 @@
 var webpack = require('webpack');
 
+var commonsPlugin = new webpack.optimize.CommonsChunkPlugin('common.js');
+
 module.exports = {
-  entry: "./src/Index.tsx",
+  entry: {
+    login: './src/login.tsx',
+    main: "./src/Index.tsx"
+  },
   output: {
-    filename: "./dist/bundle.js"
+    path: 'public/bundle',
+    filename: '[name].js'
   },
 
   resolve: {
@@ -12,6 +18,7 @@ module.exports = {
   },
 
   plugins: [
+    commonsPlugin,
     new webpack.optimize.UglifyJsPlugin({
       compress: {
         warnings: false

@@ -1,4 +1,4 @@
-dist/
+public/bundle/
 node_modules/
 .idea/
 typings/modulues

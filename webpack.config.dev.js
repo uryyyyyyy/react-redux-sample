@@ -1,8 +1,18 @@
+var webpack = require('webpack');
+
+var commonsPlugin = new webpack.optimize.CommonsChunkPlugin('common.js');
+
 module.exports = {
-  entry: "./src/Index.tsx",
-  output: {
-    filename: "./dist/bundle.js"
+  entry: {
+    login: './src/login.tsx',
+    main: "./src/Index.tsx"
   },
+  output: {
+    path: 'public/bundle',
+    filename: '[name].js'
+  },
+
+  plugins: [commonsPlugin],
 
   // Enable sourcemaps for debugging webpack's output.
   devtool: "source-map",

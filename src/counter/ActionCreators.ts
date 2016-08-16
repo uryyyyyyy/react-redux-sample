@@ -1,22 +1,26 @@
-import {MyAction, ActionTypes, JsonObject} from "./Models";
-import * as axios from "axios";
+import {MyAction, ActionTypes, IAmount, IMessageJson} from "./Models";
+import {getRequest} from "../utils/HttpClient";
 
-export function fetchAmountAction() {
+export function fetchAmountAction(forceFail: boolean) {
     return (dispatch: (action: MyAction) => any) => {
 
-        function failCB(ex:Error):void {
-            dispatch({ type: ActionTypes.FETCH_FAIL, error: ex})
+        function failCB(msg: IMessageJson):void {
+            dispatch({ type: ActionTypes.FETCH_FAIL, msg: msg})
         }
 
-        function successCB(json:Axios.AxiosXHR<JsonObject>):void {
-            const action = { type: ActionTypes.FETCH_SUCCESS, amount: json.data.amount};
+        function successCB(amount: IAmount):void {
+            const action = { type: ActionTypes.FETCH_SUCCESS, amountJson: amount};
             dispatch(action)
         }
 
         dispatch({ type: ActionTypes.FETCH_REQUEST});
-        return axios.get('/api/count')
-            .then(successCB)
-            .catch(failCB)
+        let url = '';
+        if(forceFail){
+            url = '/api/countFail'
+        }else{
+            url = '/api/count'
+        }
+        return getRequest<IAmount>(url, successCB, failCB)
     }
 }
 

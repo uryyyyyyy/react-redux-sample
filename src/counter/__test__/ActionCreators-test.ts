@@ -20,10 +20,10 @@ describe('Async test', () => {
 
         const state = {};
         const store = mockStore(state);
-        store.dispatch(fetchAmountAction()).then(() => {
+        store.dispatch(fetchAmountAction(false)).then(() => {
             const actions = store.getActions();
             assert.deepEqual(actions[0], { type: ActionTypes.FETCH_REQUEST });
-            assert.deepEqual(actions[1], { type: ActionTypes.FETCH_SUCCESS, amount: 100 });
+            assert.deepEqual(actions[1], { type: ActionTypes.FETCH_SUCCESS, amountJson: {amount: 100}});
             done();
         }).catch(done);
     });
@@ -36,7 +36,7 @@ describe('Async test', () => {
 
         const state = {};
         const store = mockStore(state);
-        store.dispatch(fetchAmountAction()).then(() => {
+        store.dispatch(fetchAmountAction(false)).then(() => {
             const actions = store.getActions();
             assert.deepEqual(actions[0], { type: ActionTypes.FETCH_REQUEST });
             assert.deepEqual(actions[1].type, ActionTypes.FETCH_FAIL);

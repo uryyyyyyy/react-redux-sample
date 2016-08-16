@@ -5,14 +5,19 @@ export interface CounterState {
     loadingCount: number;
 }
 
-export interface JsonObject {
+export interface IAmount {
     amount: number;
+}
+
+export interface IMessageJson {
+    message: string;
 }
 
 export interface MyAction {
     type: string;
     amount?: number;
-    error?: Error;
+    amountJson?: IAmount;
+    msg?: IMessageJson;
 }
 
 export class DispatchActions {
@@ -30,7 +35,11 @@ export class DispatchActions {
     }
 
     public fetchAmount() {
-        this.dispatch(fetchAmountAction())
+        this.dispatch(fetchAmountAction(false))
+    }
+
+    public fetchAmountFail() {
+        this.dispatch(fetchAmountAction(true))
     }
 }
 
