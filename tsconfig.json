@@ -3,12 +3,11 @@
         "outDir": "./dist/",
         "sourceMap": true,
         "noImplicitAny": true,
-        "module": "commonjs",
+        "module": "es6",
         "target": "es5",
         "jsx": "react"
     },
     "files": [
-        "./typings/index.d.ts",
         "./src/Index.tsx"
     ]
 }

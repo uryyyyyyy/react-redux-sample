@@ -7,8 +7,7 @@ module.exports = {
   },
 
   resolve: {
-    // Add '.ts' and '.tsx' as resolvable extensions.
-    extensions: ["", ".ts", ".tsx", ".js"]
+    extensions: [".ts", ".tsx", ".js"]
   },
 
   plugins: [
@@ -23,11 +22,14 @@ module.exports = {
       }
     })
   ],
-
   module: {
-    loaders: [
-      // All files with a '.ts' or '.tsx' extension will be handled by 'ts-loader'.
-      { test: /\.tsx?$/, loader: "ts-loader" }
+    rules: [
+      {
+        test: /\.tsx?$/,
+        use: [
+          {loader: "ts-loader"}
+        ]
+      }
     ]
   }
 };
