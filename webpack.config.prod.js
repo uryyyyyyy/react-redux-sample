@@ -1,4 +1,4 @@
-var webpack = require('webpack');
+const webpack = require('webpack');
 
 module.exports = {
   entry: "./src/Index.tsx",
@@ -31,8 +31,5 @@ module.exports = {
         ]
       }
     ]
-  },
-  performance: {
-    hints:false
   }
 };
