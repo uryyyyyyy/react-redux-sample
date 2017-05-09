@@ -7,11 +7,11 @@
     "build:prod": "webpack --config ./webpack.config.prod.js"
   },
   "devDependencies": {
-    "@types/react": "15.0.22",
+    "@types/react": "15.0.24",
     "@types/react-dom": "15.5.0",
     "ts-loader": "2.0.3",
-    "typescript": "2.2.2",
-    "webpack": "2.4.1"
+    "typescript": "2.3.2",
+    "webpack": "2.5.1"
   },
   "dependencies": {
     "react": "15.5.4",

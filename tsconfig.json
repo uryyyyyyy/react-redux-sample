@@ -2,6 +2,8 @@
   "compilerOptions": {
     "strictNullChecks": true,
     "noUnusedLocals" : true,
+    "noImplicitThis": true,
+    "alwaysStrict": true,
     "outDir": "./dist/",
     "sourceMap": true,
     "noImplicitAny": true,
