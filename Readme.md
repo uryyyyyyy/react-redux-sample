@@ -3,9 +3,13 @@
 
 minimal sample implementation
 
+see document about it(Japanese)
+
+- [helloWorld](http://qiita.com/uryyyyyyy/items/63969d6ed9341affdffb)
+
 ## requirement
 
-- NodeJS 7.X~
+- NodeJS 8.1~
 
 ## setup
 
@@ -18,8 +22,6 @@ webpack watches update & re-build automatically
 `npm run build`
 
 ## run
-
-it need json response server.
 
 `python -m SimpleHTTPServer`
 
