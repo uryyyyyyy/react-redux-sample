@@ -9,15 +9,14 @@ see document about it(Japanese)
 
 ## requirement
 
-- NodeJS 8.1~
+- NodeJS 8.2~
+- NPM 5.3
 
 ## setup
 
 `npm install`
 
 ## build
-
-webpack watches update & re-build automatically
 
 `npm run build`
 
