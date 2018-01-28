@@ -1,35 +1,17 @@
-const webpack = require('webpack');
+'use strict';
 
 module.exports = {
-  entry: "./src/Index.tsx",
-  output: {
-    filename: "./dist/bundle.js"
-  },
-
-  resolve: {
-    extensions: [".ts", ".tsx", ".js"]
-  },
-
-  plugins: [
-    new webpack.optimize.UglifyJsPlugin({
-      compress: {
-        warnings: false
-      }
-    }),
-    new webpack.DefinePlugin({
-      'process.env':{
-        'NODE_ENV': JSON.stringify('production')
-      }
-    })
-  ],
+  mode: 'production',
+  entry: './src/Index.tsx',
   module: {
     rules: [
       {
         test: /\.tsx?$/,
-        use: [
-          {loader: "ts-loader"}
-        ]
+        loader: 'ts-loader'
       }
     ]
+  },
+  resolve: {
+    extensions: [ '.ts', '.tsx', '.js' ]
   }
 };

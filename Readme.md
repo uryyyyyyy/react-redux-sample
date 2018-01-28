@@ -1,6 +1,8 @@
 
 ## React-redux-sample
 
+[![CircleCI](https://circleci.com/gh/uryyyyyyy/react-redux-sample/tree/helloWorld.svg?style=svg)](https://circleci.com/gh/uryyyyyyy/react-redux-sample/tree/helloWorld)
+
 minimal sample implementation
 
 see document about it(Japanese)
@@ -9,8 +11,8 @@ see document about it(Japanese)
 
 ## requirement
 
-- NodeJS 8.2~
-- NPM 5.3
+- NodeJS 8.9~
+- NPM 5.3~
 
 ## setup
 

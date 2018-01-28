@@ -1,23 +1,18 @@
+'use strict';
+
 module.exports = {
-  entry: './src/Index.tsx',
-  output: {
-    filename: './dist/bundle.js'
-  },
-
+  mode: 'development',
   devtool: 'source-map',
-
-  resolve: {
-    extensions: ['.ts', '.tsx', '.js']
-  },
-
+  entry: './src/Index.tsx',
   module: {
     rules: [
       {
         test: /\.tsx?$/,
-        use: [
-          {loader: 'ts-loader'}
-        ]
+        loader: 'ts-loader'
       }
     ]
+  },
+  resolve: {
+    extensions: [ '.ts', '.tsx', '.js' ]
   }
 };
