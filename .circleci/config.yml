@@ -1,0 +1,17 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/node:8.9.4
+        environment:
+            TZ: "/usr/share/zoneinfo/Asia/Tokyo"
+    steps:
+      - checkout
+      - restore_cache:
+          key: dependency-cache
+      - run: npm install --no-save
+      - save_cache:
+          key: dependency-cache
+          paths:
+            - "~/.npm/_cacache"
+      - run: npm run build:prod
