@@ -11,6 +11,7 @@
     "strictPropertyInitialization": true,
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
+    "moduleResolution": "node",
     "outDir": "./dist/",
     "sourceMap": true,
     "lib": ["dom", "es2017"],
