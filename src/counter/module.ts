@@ -1,4 +1,4 @@
-import {Action} from 'redux'
+import { Action } from 'redux'
 
 enum ActionNames {
   INC = 'counter/increment',
@@ -27,20 +27,16 @@ export const decrementAmount = (amount: number): DecrementAction => ({
 
 interface FetchRequestStartAction extends Action {
   type: ActionNames.FETCH_START
-  appAction: boolean
 }
 export const fetchRequestStart = (): FetchRequestStartAction => ({
-  type: ActionNames.FETCH_START,
-  appAction: true,
+  type: ActionNames.FETCH_START
 })
 
 interface FetchRequestFinishAction extends Action {
   type: ActionNames.FETCH_FINISH
-  appAction: boolean
 }
 export const fetchRequestFinish = (): FetchRequestFinishAction => ({
-  type: ActionNames.FETCH_FINISH,
-  appAction: true,
+  type: ActionNames.FETCH_FINISH
 })
 
 export interface CounterState {
@@ -48,12 +44,9 @@ export interface CounterState {
   loadingCount: number
 }
 
-export type CounterActions = IncrementAction
-  | DecrementAction
-  | FetchRequestStartAction
-  | FetchRequestFinishAction
+export type CounterActions = IncrementAction | DecrementAction | FetchRequestStartAction | FetchRequestFinishAction
 
-const initialState:CounterState = {
+const initialState: CounterState = {
   num: 0,
   loadingCount: 0
 }
@@ -61,14 +54,14 @@ const initialState:CounterState = {
 export default function reducer(state: CounterState = initialState, action: CounterActions): CounterState {
   switch (action.type) {
     case ActionNames.INC:
-      return Object.assign({}, state, {num: state.num + action.plusAmount})
+      return Object.assign({}, state, { num: state.num + action.plusAmount })
     case ActionNames.DEC:
-      return Object.assign({}, state, {num: state.num - action.minusAmount})
+      return Object.assign({}, state, { num: state.num - action.minusAmount })
     case ActionNames.FETCH_START: {
-      return Object.assign({}, state, {loadingCount: state.loadingCount + 1})
+      return Object.assign({}, state, { loadingCount: state.loadingCount + 1 })
     }
     case ActionNames.FETCH_FINISH: {
-      return Object.assign({}, state, {loadingCount: state.loadingCount - 1})
+      return Object.assign({}, state, { loadingCount: state.loadingCount - 1 })
     }
     default:
       return state

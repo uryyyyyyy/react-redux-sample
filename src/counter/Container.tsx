@@ -1,6 +1,6 @@
 import * as React from 'react'
-import {Counter} from './Counter'
-import {useDispatch, useSelector} from 'react-redux'
+import { Counter } from './Counter'
+import { useDispatch, useSelector } from 'react-redux'
 import {
   CounterActions,
   CounterState,
@@ -9,16 +9,16 @@ import {
   fetchRequestStart,
   incrementAmount
 } from './module'
-import {Dispatch} from 'redux'
-import {ReduxState} from '../store'
-import {RouteComponentProps} from 'react-router'
+import { Dispatch } from 'redux'
+import { ReduxState } from '../store'
+import { RouteComponentProps } from 'react-router'
 
 export class ActionDispatcher {
   constructor(private dispatch: Dispatch<CounterActions>) {}
 
   myHeaders = new Headers({
     'Content-Type': 'application/json',
-    'Accept': 'application/json',
+    Accept: 'application/json',
     'X-Requested-With': 'XMLHttpRequest'
   })
 
@@ -52,17 +52,11 @@ export class ActionDispatcher {
   }
 }
 
-type RouterProps = RouteComponentProps<{myParams: string | undefined}>
+type RouterProps = RouteComponentProps<{ myParams: string | undefined }>
 
 export default function CounterContainer(props: RouterProps) {
   const count = useSelector<ReduxState, CounterState>((state) => {
     return state.counter
   })
-  return (
-      <Counter
-          value={count}
-          actions={new ActionDispatcher(useDispatch())}
-          param={props.match.params.myParams}
-      />
-  )
+  return <Counter value={count} actions={new ActionDispatcher(useDispatch())} param={props.match.params.myParams} />
 }

@@ -1,13 +1,12 @@
-const args = process.argv;
-args.splice(0, 4);
+const args = process.argv
+args.splice(0, 4)
 
-const polyfills = [];
+const polyfills = []
 
-const files = polyfills.concat(args);
+const files = polyfills.concat(args)
 
 module.exports = (config) => {
   config.set({
-
     basePath: '',
     frameworks: ['jasmine'],
     files: files,
@@ -16,19 +15,17 @@ module.exports = (config) => {
       '**/*.spec.tsx': ['webpack']
     },
     mime: {
-      'text/x-typescript': ['ts','tsx']
+      'text/x-typescript': ['ts', 'tsx']
     },
     webpack: {
       resolve: {
-        extensions: ['.ts', '.js', ".tsx"]
+        extensions: ['.ts', '.js', '.tsx']
       },
       module: {
         rules: [
           {
             test: /\.tsx?$/,
-            use: [
-              {loader: "ts-loader"}
-            ]
+            use: [{ loader: 'ts-loader' }]
           }
         ]
       }
@@ -46,4 +43,4 @@ module.exports = (config) => {
     singleRun: true,
     concurrency: Infinity
   })
-};
+}

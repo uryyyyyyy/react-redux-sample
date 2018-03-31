@@ -1,15 +1,14 @@
 import * as fetchMock from 'fetch-mock'
-import {incrementAmount, fetchRequestStart, fetchRequestFinish} from '../module'
-import {ActionDispatcher} from '../Container'
+import { incrementAmount, fetchRequestStart, fetchRequestFinish } from '../module'
+import { ActionDispatcher } from '../Container'
 
 describe('ActionDispatcher', () => {
-
   beforeEach(() => {
     fetchMock.restore()
   })
 
   it('increment', () => {
-    const spy: any = {dispatch: null}
+    const spy: any = { dispatch: null }
     spyOn(spy, 'dispatch')
     const actions = new ActionDispatcher(spy.dispatch)
     actions.increment(100)
@@ -18,9 +17,9 @@ describe('ActionDispatcher', () => {
   })
 
   it('fetchAmount success', async (done) => {
-    fetchMock.get('/api/count', {body: {amount: 100}, status: 200})
+    fetchMock.get('/api/count', { body: { amount: 100 }, status: 200 })
 
-    const spy: any = {dispatch: null}
+    const spy: any = { dispatch: null }
     spyOn(spy, 'dispatch')
     const actions = new ActionDispatcher(spy.dispatch)
     await actions.asyncIncrement()
@@ -32,9 +31,9 @@ describe('ActionDispatcher', () => {
   })
 
   it('fetchAmount fail', async (done) => {
-    fetchMock.get('/api/count', {body: {}, status: 400})
+    fetchMock.get('/api/count', { body: {}, status: 400 })
 
-    const spy: any = {dispatch: null}
+    const spy: any = { dispatch: null }
     spyOn(spy, 'dispatch')
     const actions = new ActionDispatcher(spy.dispatch)
     await actions.asyncIncrement()

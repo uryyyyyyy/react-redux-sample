@@ -1,4 +1,4 @@
-'use strict';
+'use strict'
 
 module.exports = {
   mode: 'development',
@@ -13,6 +13,6 @@ module.exports = {
     ]
   },
   resolve: {
-    extensions: [ '.ts', '.tsx', '.js' ]
+    extensions: ['.ts', '.tsx', '.js']
   }
-};
+}
