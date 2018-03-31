@@ -11,6 +11,7 @@ import {
 } from './module'
 import {Dispatch} from 'redux'
 import {ReduxState} from '../store'
+import {RouteComponentProps} from 'react-router'
 
 export class ActionDispatcher {
   constructor(private dispatch: Dispatch<CounterActions>) {}
@@ -51,7 +52,9 @@ export class ActionDispatcher {
   }
 }
 
-export default function CounterContainer() {
+type RouterProps = RouteComponentProps<{myParams: string | undefined}>
+
+export default function CounterContainer(props: RouterProps) {
   const count = useSelector<ReduxState, CounterState>((state) => {
     return state.counter
   })
@@ -59,6 +62,7 @@ export default function CounterContainer() {
       <Counter
           value={count}
           actions={new ActionDispatcher(useDispatch())}
+          param={props.match.params.myParams}
       />
   )
 }
