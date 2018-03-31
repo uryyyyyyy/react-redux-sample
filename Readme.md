@@ -1,7 +1,7 @@
 
 ## React-redux-sample
 
-[![CircleCI](https://circleci.com/gh/uryyyyyyy/react-redux-sample/tree/lint_formatter.svg?style=svg)](https://circleci.com/gh/uryyyyyyy/react-redux-sample/tree/lint_formatter)
+[![CircleCI](https://circleci.com/gh/uryyyyyyy/react-redux-sample/tree/build-tuning.svg?style=svg)](https://circleci.com/gh/uryyyyyyy/react-redux-sample/tree/build-tuning)
 
 minimal sample implementation
 
@@ -13,6 +13,7 @@ see document about it(Japanese)
 - [async](http://qiita.com/uryyyyyyy/items/41334a810f1501ece87d)
 - [react-router](http://qiita.com/uryyyyyyy/items/30733e9cd140e60c52bd)
 - lint & formatter (coming soon)
+- build-tuning (coming soon)
 
 ## requirement
 

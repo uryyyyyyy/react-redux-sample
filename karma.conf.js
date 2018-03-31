@@ -1,3 +1,6 @@
+const webpack = require('webpack')
+const env = require('./config/variables/dev')
+
 const args = process.argv
 args.splice(0, 4)
 
@@ -28,7 +31,8 @@ module.exports = (config) => {
             use: [{ loader: 'ts-loader' }]
           }
         ]
-      }
+      },
+      plugins: [new webpack.DefinePlugin(env)]
     },
     webpackMiddleware: {
       stats: 'errors-only',
