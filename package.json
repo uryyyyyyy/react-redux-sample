@@ -5,12 +5,26 @@
   "scripts": {
     "build": "webpack --config webpack.config.dev.js",
     "watch": "webpack --config webpack.config.dev.js --watch",
-    "build:prod": "webpack --config webpack.config.prod.js"
+    "build:prod": "webpack --config webpack.config.prod.js",
+    "test:unit": "karma start karma.conf.js",
+    "test:all": "karma start karma.conf.js **/*.spec.tsx **/*.spec.ts"
   },
   "devDependencies": {
+    "@types/enzyme": "3.10.3",
+    "@types/enzyme-adapter-react-16": "1.0.5",
+    "@types/jasmine": "3.4.0",
     "@types/react": "16.9.1",
     "@types/react-dom": "16.8.5",
     "@types/react-redux": "7.1.1",
+    "enzyme": "3.10.0",
+    "enzyme-adapter-react-16": "1.14.0",
+    "jasmine-core": "3.4.0",
+    "karma": "4.2.0",
+    "karma-chrome-launcher": "3.0.0",
+    "karma-jasmine": "2.0.1",
+    "karma-mocha-reporter": "2.2.5",
+    "karma-webpack": "4.0.2",
+    "react-test-renderer": "16.9.0",
     "ts-loader": "6.0.4",
     "typescript": "3.5.3",
     "webpack": "4.39.1",

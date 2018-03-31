@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: circleci/node:8.9.4
+      - image: circleci/node:8.9.4-browsers
         environment:
             TZ: "/usr/share/zoneinfo/Asia/Tokyo"
     steps:
@@ -15,3 +15,4 @@ jobs:
           paths:
             - "~/.npm/_cacache"
       - run: npm run build:prod
+      - run: npm run test:all
