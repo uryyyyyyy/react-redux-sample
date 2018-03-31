@@ -3,6 +3,7 @@
     "strictNullChecks": true,
     "noUnusedLocals" : true,
     "noImplicitThis": true,
+    "noUnusedParameters": true,
     "alwaysStrict": true,
     "noImplicitAny": true,
     "strictFunctionTypes": true,
