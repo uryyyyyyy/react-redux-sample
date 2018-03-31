@@ -5,6 +5,7 @@ import Counter from './counter/Container'
 import NotFound from './NotFound'
 import { Home } from './home/Home'
 import ReactDNDSample from './dnd/Container'
+import FileUploadSample from './upload/Container'
 
 export function Routes() {
   return (
@@ -22,12 +23,15 @@ export function Routes() {
       <li>
         <Link to="/dnd">Drag and Drop</Link>
       </li>
+      <li>
+        <Link to="/upload">file upload</Link>
+      </li>
       <Switch>
         <Route exact={true} path="/counter" component={Counter} />
         <Route path="/counter/:myParams" component={Counter} />
         <Route path="/dnd" component={ReactDNDSample} />
+        <Route path="/upload" component={FileUploadSample} />
         <Route path="/" component={Home} />
-
         <Route component={NotFound} />
       </Switch>
     </div>
