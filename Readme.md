@@ -1,7 +1,7 @@
 
 ## React-redux-sample
 
-[![CircleCI](https://circleci.com/gh/uryyyyyyy/react-redux-sample/tree/build-tuning.svg?style=svg)](https://circleci.com/gh/uryyyyyyy/react-redux-sample/tree/build-tuning)
+[![CircleCI](https://circleci.com/gh/uryyyyyyy/react-redux-sample/tree/more-tools.svg?style=svg)](https://circleci.com/gh/uryyyyyyy/react-redux-sample/tree/more-tools)
 
 minimal sample implementation
 

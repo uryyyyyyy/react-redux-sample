@@ -6,6 +6,8 @@ import { Provider } from 'react-redux'
 import { createBrowserHistory } from 'history'
 import { Routes } from './Routes'
 import { PRODUCTION } from './Variables'
+import HTML5Backend from 'react-dnd-html5-backend'
+import { DndProvider } from 'react-dnd'
 
 const history = createBrowserHistory()
 
@@ -14,7 +16,9 @@ console.log(`this source is for ${PRODUCTION ? 'prod' : 'dev'}`)
 ReactDOM.render(
   <Provider store={store}>
     <Router history={history}>
-      <Routes />
+      <DndProvider backend={HTML5Backend}>
+        <Routes />
+      </DndProvider>
     </Router>
   </Provider>,
   document.getElementById('app')

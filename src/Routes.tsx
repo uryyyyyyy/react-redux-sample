@@ -4,6 +4,7 @@ import { Link, Route } from 'react-router-dom'
 import Counter from './counter/Container'
 import NotFound from './NotFound'
 import { Home } from './home/Home'
+import ReactDNDSample from './dnd/Container'
 
 export function Routes() {
   return (
@@ -18,10 +19,15 @@ export function Routes() {
       <li>
         <Link to="/counter/papaparam">Counter with param</Link>
       </li>
+      <li>
+        <Link to="/dnd">Drag and Drop</Link>
+      </li>
       <Switch>
         <Route exact={true} path="/counter" component={Counter} />
         <Route path="/counter/:myParams" component={Counter} />
+        <Route path="/dnd" component={ReactDNDSample} />
         <Route path="/" component={Home} />
+
         <Route component={NotFound} />
       </Switch>
     </div>
