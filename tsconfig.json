@@ -8,6 +8,8 @@
     "noImplicitAny": true,
     "strictFunctionTypes": true,
     "strictPropertyInitialization": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
     "outDir": "./dist/",
     "sourceMap": true,
     "lib": ["dom", "ES2017"],
