@@ -28,7 +28,25 @@ module.exports = (config) => {
         rules: [
           {
             test: /\.tsx?$/,
-            use: [{ loader: 'ts-loader' }]
+            use: [
+              {loader: "ts-loader"}
+            ]
+          },
+          {
+            test: /\.scss$/,
+            use: [
+              {
+                loader: "style-loader"
+              }, {
+                loader: "css-loader",
+                options: {
+                  importLoaders: 1,
+                  modules: true
+                }
+              }, {
+                loader: "sass-loader"
+              }
+            ]
           }
         ]
       },

@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { CounterState } from './module'
 import { ActionDispatcher } from './Container'
+const styles = require('./style.scss')
 
 interface Props {
   value: CounterState
@@ -12,7 +13,7 @@ export function Counter(props: Props) {
   return (
     <div>
       {props.param === undefined ? null : <div>{props.param}</div>}
-      <p>{`score: ${props.value.num}`}</p>
+      <p className={styles.App}>{`score: ${props.value.num}`}</p>
       <button onClick={() => props.actions.increment(3)}>Increment 3</button>
       <button onClick={() => props.actions.decrement(2)}>Decrement 2</button>
       <button onClick={() => props.actions.asyncIncrement()}>async Increment 100</button>
