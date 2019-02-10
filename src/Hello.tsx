@@ -4,8 +4,6 @@ export interface Props {
     content: string;
 }
 
-export default class MyComponent extends React.Component<Props, {}> {
-    render() {
-        return <div>{this.props.content}</div>
-    }
+export default function MyComponent(props: Props) {
+    return <div>{props.content}</div>
 }
