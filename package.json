@@ -8,15 +8,15 @@
     "build:prod": "webpack --config webpack.config.prod.js"
   },
   "devDependencies": {
-    "@types/react": "16.8.3",
-    "@types/react-dom": "16.8.2",
-    "ts-loader": "5.3.3",
-    "typescript": "3.3.3",
-    "webpack": "4.29.4",
-    "webpack-cli": "3.2.3"
+    "@types/react": "16.8.23",
+    "@types/react-dom": "16.8.4",
+    "ts-loader": "6.0.4",
+    "typescript": "3.5.2",
+    "webpack": "4.35.2",
+    "webpack-cli": "3.3.5"
   },
   "dependencies": {
-    "react": "16.8.2",
-    "react-dom": "16.8.2"
+    "react": "16.8.6",
+    "react-dom": "16.8.6"
   }
 }
